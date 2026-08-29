@@ -1,0 +1,31 @@
+# 索引仓库的持续集成
+#
+# 本仓库只有一份 index.json 与一个零依赖的校验脚本，因此不装任何依赖。
+#
+# 校验规则必须与内核 `parseIndex` 逐条一致（见 scripts/validate.mjs 的文件头）：
+# 内核对不合法记录静默丢弃，写错一个字段的后果仅是该插件不出现在面板列表里，
+# 没有任何报错。本 CI 的作用即把那次静默丢弃变成一次可见的失败。
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20.11"
+
+      - name: 校验索引
+        run: node scripts/validate.mjs

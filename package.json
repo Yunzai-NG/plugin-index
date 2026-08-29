@@ -1,0 +1,20 @@
+{
+  "name": "@yunzai-ng/plugin-index",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Yunzai NG 官方插件索引：面板的插件市场据此列出可安装插件",
+  "type": "module",
+  "license": "AGPL-3.0-or-later",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yunzai-NG/plugin-index.git"
+  },
+  "homepage": "https://github.com/Yunzai-NG/plugin-index",
+  "engines": {
+    "node": ">=20.11.0"
+  },
+  "scripts": {
+    "validate": "node scripts/validate.mjs",
+    "verify": "pnpm run validate"
+  }
+}

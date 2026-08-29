@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "updatedAt": "2026-08-29",
+  "plugins": [
+    {
+      "name": "webui",
+      "title": "面板",
+      "description": "概览、账号、日志、插件、插件市场、面板商店、配置与帮助八个页面。配置表单由各插件声明的 schema 自动生成，按分组分横向页签。概览页的组件可拖动排布，也可由面板插件包往上添格子。内核不再自带面板，未安装本插件时仅 /api 可用。",
+      "author": "Yunzai-NG",
+      "version": "0.1.0",
+      "homepage": "https://github.com/Yunzai-NG/webui-plugin",
+      "minCore": "0.1.0",
+      "tags": ["面板", "管理"],
+      "official": true,
+      "install": {
+        "type": "git",
+        "url": "https://github.com/Yunzai-NG/webui-plugin",
+        "branch": "main"
+      }
+    },
+    {
+      "name": "adapter-napcat",
+      "title": "NapCat 适配器",
+      "description": "以 OneBot v11 协议接入 NapCat，支持正向与反向 WebSocket、HTTP 与 HTTP 上报四种网络模式。",
+      "author": "Yunzai-NG",
+      "version": "0.1.0",
+      "homepage": "https://github.com/Yunzai-NG/adapter-napcat",
+      "minCore": "0.1.0",
+      "tags": ["适配器", "QQ", "OneBot"],
+      "official": true,
+      "install": {
+        "type": "git",
+        "url": "https://github.com/Yunzai-NG/adapter-napcat",
+        "branch": "main"
+      }
+    },
+    {
+      "name": "renderer-puppeteer",
+      "title": "Puppeteer 渲染器",
+      "description": "art-template 编译 HTML 并由 Chromium 截图出图，兼容旧 Yunzai 的模板写法。不自带 Chromium。",
+      "author": "Yunzai-NG",
+      "version": "0.1.0",
+      "homepage": "https://github.com/Yunzai-NG/renderer-puppeteer",
+      "minCore": "0.1.0",
+      "tags": ["渲染器", "出图"],
+      "official": true,
+      "install": {
+        "type": "git",
+        "url": "https://github.com/Yunzai-NG/renderer-puppeteer",
+        "branch": "main"
+      }
+    },
+    {
+      "name": "mhy-game-plugin",
+      "title": "米哈游游戏插件",
+      "description": "原神 / 星穹铁道 / 绝区零：体力、深渊、抽卡记录、札记与角色面板，含米游社接口与 Cookie 池。查询结果默认出图，需渲染器。",
+      "author": "Yunzai-NG",
+      "version": "0.1.0",
+      "homepage": "https://github.com/Yunzai-NG/mhy-game-plugin",
+      "minCore": "0.1.0",
+      "tags": ["功能", "原神", "星穹铁道", "绝区零"],
+      "official": true,
+      "install": {
+        "type": "git",
+        "url": "https://github.com/Yunzai-NG/mhy-game-plugin",
+        "branch": "main"
+      }
+    }
+  ]
+}
