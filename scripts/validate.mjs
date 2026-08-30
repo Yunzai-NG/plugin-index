@@ -33,6 +33,15 @@ import process from "node:process"
 const NAME_RE = /^[a-z\d][a-z\d._-]*$/i
 
 /**
+ * 合法的 npm script 名：与两侧 `pm.ts` 的 `SCRIPT_NAME_RE` 一致
+ *
+ * 冒号是为了 `install:browser` 这类分段名。**刻意不含空格、引号与任何 shell 元字符**——
+ * 两侧执行包管理器时必须带 shell（Windows 上 pnpm/npm 是 `.cmd`，不经 shell 起不来），
+ * 于是这些名字是被解释的字符串，一个 `build && curl …` 就是任意命令执行。这道正则即那道边界。
+ */
+const SCRIPT_NAME_RE = /^[a-z\d][a-z\d:._-]*$/i
+
+/**
  * 保留名，两侧都会拒
  *
  * `NAME_RE` 放行它们 —— 它们全是合法的目录名 —— 而它们落在安装目录之内却会破坏运行环境。
@@ -110,6 +119,40 @@ function checkInstall(raw, at, errors) {
 }
 
 /**
+ * 校验 setup 字段（装后步骤）
+ *
+ * 两侧都在**解析**那一刻按不合法处理，且丢的是整条记录 —— 因为只忽略这一项会装出一个
+ * 「依赖装了、产物没编译」的插件，那种插件加载时报「找不到 dist/index.js」，离真实原因
+ * （索引里的 script 名写错了）很远。故此处升格为错误，否则作者只看到「我的条目不见了」。
+ * @param raw 条目的 setup 字段
+ * @param at 报错位置前缀
+ * @param errors 错误收集数组
+ */
+function checkSetup(raw, at, errors) {
+  if (raw === undefined) return
+  if (typeof raw !== "object" || raw === null || Array.isArray(raw)) {
+    errors.push(`${at}：setup 须为对象`)
+    return
+  }
+  if (!Array.isArray(raw.scripts)) {
+    errors.push(`${at}：setup.scripts 须为数组`)
+    return
+  }
+  if (raw.scripts.length === 0) {
+    // 与没声明是同一个意思，两侧都当作 undefined。留着它只会让人以为有装后步骤
+    errors.push(`${at}：setup.scripts 为空数组 —— 与不写 setup 等效，请删掉这一项`)
+  }
+  for (const name of raw.scripts) {
+    if (typeof name !== "string" || !SCRIPT_NAME_RE.test(name)) {
+      errors.push(`${at}：setup.scripts 含不合法的 script 名 ${JSON.stringify(name)}（须匹配 ${SCRIPT_NAME_RE}）`)
+    }
+  }
+  if ("dev" in raw && typeof raw.dev !== "boolean") {
+    errors.push(`${at}：setup.dev 须为布尔值。缺省为 true —— 要靠 build 出产物的包需要 devDependencies 里的编译器`)
+  }
+}
+
+/**
  * 校验一条记录
  * @param raw 索引记录
  * @param i 记录下标
@@ -139,6 +182,7 @@ function checkEntry(raw, i, seen, spec, errors) {
   }
 
   checkInstall(raw.install, `${at}（${name ?? "无名"}）`, errors)
+  checkSetup(raw.setup, `${at}（${name ?? "无名"}）`, errors)
 
   if ("official" in raw && typeof raw.official !== "boolean") {
     errors.push(`${at}：official 须为布尔值，实为 ${JSON.stringify(raw.official)}。两侧视 true 之外一切为 false`)

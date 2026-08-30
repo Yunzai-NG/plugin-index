@@ -16,7 +16,8 @@
         "type": "git",
         "url": "https://github.com/Yunzai-NG/webui-plugin",
         "branch": "main"
-      }
+      },
+      "setup": { "scripts": ["build"] }
     },
     {
       "name": "adapter-napcat",
@@ -32,12 +33,13 @@
         "type": "git",
         "url": "https://github.com/Yunzai-NG/adapter-napcat",
         "branch": "main"
-      }
+      },
+      "setup": { "scripts": ["build"] }
     },
     {
       "name": "renderer-puppeteer",
       "title": "Puppeteer 渲染器",
-      "description": "art-template 编译 HTML 并由 Chromium 截图出图，兼容旧 Yunzai 的模板写法。安装后需执行 pnpm run install:browser 下载无头浏览器。",
+      "description": "art-template 编译 HTML 并由 Chromium 截图出图，兼容旧 Yunzai 的模板写法。安装时会一并下载无头浏览器（约 200MB），故这一项比其他插件慢得多。",
       "author": "Yunzai-NG",
       "version": "0.1.0",
       "homepage": "https://github.com/Yunzai-NG/renderer-puppeteer",
@@ -48,7 +50,8 @@
         "type": "git",
         "url": "https://github.com/Yunzai-NG/renderer-puppeteer",
         "branch": "main"
-      }
+      },
+      "setup": { "scripts": ["build", "install:browser"] }
     },
     {
       "name": "mhy-game-plugin",
@@ -64,7 +67,8 @@
         "type": "git",
         "url": "https://github.com/Yunzai-NG/mhy-game-plugin",
         "branch": "main"
-      }
+      },
+      "setup": { "scripts": ["build"] }
     }
   ]
 }

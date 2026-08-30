@@ -5,33 +5,34 @@
     {
       "name": "hardware",
       "title": "硬件信息",
-      "description": "CPU / 内存 / SWAP / 显卡的双色环、磁盘分区与读写速率、网络吞吐、进程监控、neofetch 式系统清单与 Redis，共九枚组件。Redis 地址与对外探测目标可在插件页的「配置」里改。",
+      "description": "「系统」一枚把 CPU 与内存合成一张卡（左侧事实表、右侧两枚带三段图例的环），另有 SWAP、显卡、磁盘分区与读写速率、网络吞吐、进程监控、neofetch 式系统清单与 Redis，共十枚组件，缺省只显示「系统」。Redis 地址与对外探测目标可在插件页的「配置」里改。",
       "author": "Yunzai-NG",
       "version": "0.1.0",
       "homepage": "https://github.com/Yunzai-NG/hardware-plugin",
       "minWebui": "0.1.0",
       "tags": ["监控", "系统"],
       "official": true,
-      "widgets": 9,
+      "widgets": 10,
       "server": true,
       "deps": true,
       "install": {
         "type": "git",
         "url": "https://github.com/Yunzai-NG/hardware-plugin",
         "branch": "main"
-      }
+      },
+      "setup": { "scripts": ["build"] }
     },
     {
       "name": "webui-example",
       "title": "面板插件示例",
-      "description": "写面板插件时照抄的那一份：一个包导出三枚组件（一言、时间、跑马灯）、自加一个页签、一份 node 侧入口代取外部接口、一份自带样式表、六项配置。每样各示范一件写插件时会遇到的事。",
+      "description": "写面板插件时照抄的那一份：一个包导出四枚组件（一言、日历、时钟、跑马灯）、自加一个页签、一份 node 侧入口代取外部接口与算农历、一份自带样式表、一项配置。每样各示范一件写插件时会遇到的事。无构建步骤，装完刷新页面即生效。",
       "author": "Yunzai-NG",
       "version": "0.1.0",
       "homepage": "https://github.com/Yunzai-NG/webui-example",
       "minWebui": "0.1.0",
       "tags": ["示例", "开发"],
       "official": true,
-      "widgets": 3,
+      "widgets": 4,
       "server": true,
       "deps": true,
       "install": {
