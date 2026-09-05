@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-30",
+  "updatedAt": "2026-09-05",
   "plugins": [
     {
       "name": "webui",
@@ -69,6 +69,22 @@
         "branch": "main"
       },
       "setup": { "scripts": ["build"] }
+    },
+    {
+      "name": "relay-checkin-plugin",
+      "title": "中转站自动签到插件",
+      "description": "中转站自动签到插件。手动签到 / 每日定时 / 余额查询，结果出图，数据按用户隔离，群内所有人可用。",
+      "author": "ccxhan",
+      "version": "1.1.0",
+      "homepage": "https://gitcode.com/ccxhan/relay-checkin-plugin",
+      "minCore": "0.1.0",
+      "tags": ["功能", "中转站签到"],
+      "official": false,
+      "install": {
+        "type": "git",
+        "url": "git@gitcode.com:ccxhan/relay-checkin-plugin.git",
+        "branch": "main"
+      }
     }
   ]
 }
