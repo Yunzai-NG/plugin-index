@@ -85,6 +85,23 @@
         "url": "git@gitcode.com:ccxhan/relay-checkin-plugin.git",
         "branch": "main"
       }
+    },
+    {
+      "name": "adapter-qqbot",
+      "title": "QQBot 适配器",
+      "description": "Yunzai NG 的 QQ官方机器人适配器，通过 QQ开放平台APIv2 接入，支持 WebSocket Gateway 与 Webhook 两种连接模式， 覆盖群聊、C2C 私聊、频道、频道私信四大场景。",
+      "author": "Yunzai-NG",
+      "version": "0.1.0",
+      "homepage": "https://github.com/Yunzai-NG/adapter-qqbot",
+      "minCore": "0.2.0",
+      "tags": ["适配器", "QQBot"],
+      "official": true,
+      "install": {
+        "type": "git",
+        "url": "https://github.com/Yunzai-NG/adapter-qqbot",
+        "branch": "main"
+      },
+      "setup": { "scripts": ["build"] }
     }
   ]
 }
