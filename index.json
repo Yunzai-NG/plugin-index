@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-09-05",
+  "updatedAt": "2026-09-11",
   "plugins": [
     {
       "name": "webui",
@@ -82,7 +82,7 @@
       "official": false,
       "install": {
         "type": "git",
-        "url": "git@gitcode.com:ccxhan/relay-checkin-plugin.git",
+        "url": "https://gitcode.com/ccxhan/relay-checkin-plugin",
         "branch": "main"
       }
     },
@@ -91,7 +91,7 @@
       "title": "QQBot 适配器",
       "description": "Yunzai NG 的 QQ官方机器人适配器，通过 QQ开放平台APIv2 接入，支持 WebSocket Gateway 与 Webhook 两种连接模式， 覆盖群聊、C2C 私聊、频道、频道私信四大场景。",
       "author": "Yunzai-NG",
-      "version": "0.1.0",
+      "version": "0.3.0",
       "homepage": "https://github.com/Yunzai-NG/adapter-qqbot",
       "minCore": "0.2.0",
       "tags": ["适配器", "QQBot"],
@@ -102,6 +102,22 @@
         "branch": "main"
       },
       "setup": { "scripts": ["build"] }
+    },
+    {
+      "name": "GamePush-Plugin",
+      "title": "游戏更新推送插件",
+      "description": "游戏更新推送插件，通过请求官方api获取游戏当前版本。",
+      "author": "rainbowwarmth",
+      "version": "1.1.0",
+      "homepage": "https://gitcode.com/rainbowwarmth/GamePush-Plugin",
+      "minCore": "0.1.0",
+      "tags": ["功能", "游戏版本推送"],
+      "official": false,
+      "install": {
+        "type": "git",
+        "url": "https://gitcode.com/rainbowwarmth/GamePush-Plugin",
+        "branch": "main"
+      }
     }
   ]
 }
