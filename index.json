@@ -118,6 +118,40 @@
         "url": "https://gitcode.com/rainbowwarmth/GamePush-Plugin",
         "branch": "main"
       }
+    },
+    {
+      "name": "adapter-stdin",
+      "title": "标准输入适配器",
+      "description": "把运行框架的终端本身当作一个账号：在终端里直接输入即可与机器人对话，用于没有 QQ 环境时调试命令与插件。默认配置即可用，无需填写任何字段。",
+      "author": "Yunzai-NG",
+      "version": "0.1.0",
+      "homepage": "https://github.com/Yunzai-NG/adapter-stdin",
+      "minCore": "0.2.0",
+      "tags": ["适配器", "调试", "终端"],
+      "official": true,
+      "install": {
+        "type": "git",
+        "url": "https://github.com/Yunzai-NG/adapter-stdin",
+        "branch": "main"
+      },
+      "setup": { "scripts": ["build"] }
+    },
+    {
+      "name": "yenai-state",
+      "title": "椰奶状态",
+      "description": "机器人状态图：CPU / 内存 / 交换 / 显卡资源环、磁盘、上下行网络曲线、进程负载、网站连通性与 Redis 状态，附监控采样曲线。字段与椰奶状态的 state.yaml 逐一对齐。出图需渲染器。",
+      "author": "Yunzai-NG",
+      "version": "0.1.0",
+      "homepage": "https://github.com/Yunzai-NG/yenai-state",
+      "minCore": "0.2.0",
+      "tags": ["功能", "状态", "监控"],
+      "official": true,
+      "install": {
+        "type": "git",
+        "url": "https://github.com/Yunzai-NG/yenai-state",
+        "branch": "main"
+      },
+      "setup": { "scripts": ["build"] }
     }
   ]
 }
