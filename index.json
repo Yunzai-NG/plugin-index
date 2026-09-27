@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-09-26",
+  "updatedAt": "2026-09-27",
   "plugins": [
     {
       "name": "webui",
@@ -149,6 +149,23 @@
       "install": {
         "type": "git",
         "url": "https://github.com/Yunzai-NG/yenai-state",
+        "branch": "main"
+      },
+      "setup": { "scripts": ["build"] }
+    },
+    {
+      "name": "steward",
+      "title": "运维管家",
+      "description": "在聊天里重启实例、更新插件与内核。全部命令限主人。重启只做优雅停机，再由外部守护（pm2 / systemd / Windows 服务）拉起；未检测到守护时会先问一句再停机。更新内核代跑 yzng update，版本没变则不重启。重启完成后会回到原会话报一句。",
+      "author": "Yunzai-NG",
+      "version": "0.1.0",
+      "homepage": "https://github.com/Yunzai-NG/steward-plugin",
+      "minCore": "0.6.1",
+      "tags": ["功能", "运维", "重启", "更新"],
+      "official": true,
+      "install": {
+        "type": "git",
+        "url": "https://github.com/Yunzai-NG/steward-plugin",
         "branch": "main"
       },
       "setup": { "scripts": ["build"] }
