@@ -29,3 +29,12 @@ jobs:
 
       - name: 校验索引
         run: node scripts/validate.mjs
+
+      - name: 刷新 jsDelivr 缓存
+        if: github.event_name == 'push'
+        run: |
+          for f in index.json webui_index.json; do
+            echo "purge $f"
+            curl -sS "https://purge.jsdelivr.net/gh/yunzai-ng/plugin-index@main/$f" || true
+            echo
+          done
