@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-03",
+  "updatedAt": "2026-10-18",
   "plugins": [
     {
       "name": "webui",
@@ -24,7 +24,7 @@
       "title": "NapCat 适配器",
       "description": "以 OneBot v11 协议接入 NapCat，支持正向与反向 WebSocket、HTTP 与 HTTP 上报四种网络模式。",
       "author": "Yunzai-NG",
-      "version": "0.4.1",
+      "version": "0.5.0",
       "homepage": "https://github.com/Yunzai-NG/adapter-napcat",
       "minCore": "0.6.0",
       "tags": ["适配器", "QQ", "OneBot"],
