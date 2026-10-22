@@ -212,6 +212,10 @@ function checkEntry(raw, i, seen, spec, errors) {
    * 那不是能在索引里核实的事。
    */
   if (spec.key === "panels") {
+    // 商店据它分「组件」与「主题」两栏；写错时 webui 一律当作组件，条目会落进错的那一栏
+    if ("kind" in raw && !["widget", "theme", "both"].includes(raw.kind)) {
+      errors.push(`${at}：kind 只能是 widget（组件）、theme（主题）或 both（两样都有），缺省为 widget`)
+    }
     if ("widgets" in raw && (typeof raw.widgets !== "number" || !Number.isInteger(raw.widgets) || raw.widgets < 0)) {
       errors.push(`${at}：widgets 须为非负整数（仅供列表展示，装完以包的 package.json 为准）`)
     }
