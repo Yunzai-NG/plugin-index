@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-19",
+  "updatedAt": "2026-10-24",
   "plugins": [
     {
       "name": "webui",
@@ -32,6 +32,23 @@
       "install": {
         "type": "git",
         "url": "https://github.com/Yunzai-NG/adapter-onebot",
+        "branch": "main"
+      },
+      "setup": { "scripts": ["build"] }
+    },
+    {
+      "name": "adapter-kook",
+      "title": "KOOK（开黑啦）适配器",
+      "description": "通过 WebSocket 网关接入 KOOK（开黑啦）机器人，支持频道消息与私信收发、卡片消息、按钮回调，以及图片、视频、文件与语音。在面板的账号页添加账号，填入 Bot Token 即可。",
+      "author": "LiuYunLingNai",
+      "version": "0.1.0",
+      "homepage": "https://github.com/Yunzai-NG/adapter-kook",
+      "minCore": "0.2.0",
+      "tags": ["适配器", "KOOK", "开黑啦"],
+      "official": true,
+      "install": {
+        "type": "git",
+        "url": "https://github.com/Yunzai-NG/adapter-kook",
         "branch": "main"
       },
       "setup": { "scripts": ["build"] }
