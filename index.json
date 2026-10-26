@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-24",
+  "updatedAt": "2026-10-26",
   "plugins": [
     {
       "name": "webui",
@@ -49,6 +49,23 @@
       "install": {
         "type": "git",
         "url": "https://github.com/Yunzai-NG/adapter-kook",
+        "branch": "main"
+      },
+      "setup": { "scripts": ["build"] }
+    },
+    {
+      "name": "adapter-telegram",
+      "title": "Telegram 适配器",
+      "description": "通过 Bot API 长轮询接入 Telegram 机器人，支持私聊与群聊、图片、语音、视频、文件、引用回复与内联按钮。在面板的账号页添加账号，填入 Bot Token 即可，支持配置代理。",
+      "author": "LiuYunLingNai",
+      "version": "0.1.0",
+      "homepage": "https://github.com/Yunzai-NG/adapter-telegram",
+      "minCore": "0.2.0",
+      "tags": ["适配器", "Telegram"],
+      "official": true,
+      "install": {
+        "type": "git",
+        "url": "https://github.com/Yunzai-NG/adapter-telegram",
         "branch": "main"
       },
       "setup": { "scripts": ["build"] }
