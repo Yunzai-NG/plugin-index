@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-29",
+  "updatedAt": "2026-11-01",
   "plugins": [
     {
       "name": "webui",
@@ -32,6 +32,23 @@
       "install": {
         "type": "git",
         "url": "https://github.com/Yunzai-NG/adapter-onebot",
+        "branch": "main"
+      },
+      "setup": { "scripts": ["build"] }
+    },
+    {
+      "name": "adapter-icqq",
+      "title": "ICQQ 适配器",
+      "description": "通过 icqq 协议库直连 QQ，支持私聊与群聊、图片、语音、视频、文件、引用回复与合并转发。在面板内完成扫码或密码登录、滑块与设备锁验证，支持配置签名服务器和协议版本。",
+      "author": "Yunzai-NG",
+      "version": "0.1.0",
+      "homepage": "https://github.com/Yunzai-NG/adapter-icqq",
+      "minCore": "0.2.0",
+      "tags": ["适配器", "QQ", "ICQQ"],
+      "official": true,
+      "install": {
+        "type": "git",
+        "url": "https://github.com/Yunzai-NG/adapter-icqq",
         "branch": "main"
       },
       "setup": { "scripts": ["build"] }
