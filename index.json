@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-01",
+  "updatedAt": "2026-11-02",
   "plugins": [
     {
       "name": "webui",
@@ -142,9 +142,9 @@
       "title": "QQBot 适配器",
       "description": "Yunzai NG 的 QQ官方机器人适配器，通过 QQ开放平台APIv2 接入，支持 WebSocket Gateway 与 Webhook 两种连接模式， 覆盖群聊、C2C 私聊、频道、频道私信四大场景。",
       "author": "Yunzai-NG",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "homepage": "https://github.com/Yunzai-NG/adapter-qqbot",
-      "minCore": "0.4.0",
+      "minCore": "0.7.0",
       "tags": ["适配器", "QQBot"],
       "official": true,
       "install": {
@@ -237,6 +237,38 @@
         "branch": "main"
       },
       "setup": { "scripts": ["build"] }
+    },
+    {
+      "name": "rollpig-plugin",
+      "title": "今日小猪插件",
+      "description": "今天是什么小猪（今日小猪）",
+      "author": "LiuYunLingNai",
+      "version": "1.0.0",
+      "homepage": "https://github.com/LiuYunLingNai/rollpig-plugin",
+      "minCore": "0.4.0",
+      "tags": ["功能", "今日小猪"],
+      "official": false,
+      "install": {
+        "type": "git",
+        "url": "https://github.com/LiuYunLingNai/rollpig-plugin",
+        "branch": "main"
+      }
+    },
+    {
+      "name": "ImageBed-Plugin",
+      "title": "QQBot 图床聚合插件",
+      "description": "QQBot 图床聚合插件，支持多个图床的上传和管理。",
+      "author": "LiuYunLingNai",
+      "version": "0.1.0",
+      "homepage": "https://github.com/Yunzai-NG/ImageBed-Plugin",
+      "minCore": "0.7.0",
+      "tags": ["功能", "QQBot图床"],
+      "official": true,
+      "install": {
+        "type": "git",
+        "url": "https://github.com/Yunzai-NG/ImageBed-Plugin",
+        "branch": "main"
+      }
     }
   ]
 }
