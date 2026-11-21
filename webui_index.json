@@ -12,7 +12,7 @@
       "minWebui": "0.6.0",
       "tags": ["监控", "系统"],
       "official": true,
-      "widgets": 10,
+      "widgets": 12,
       "server": true,
       "deps": true,
       "install": {

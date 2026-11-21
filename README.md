@@ -98,6 +98,7 @@ pnpm run validate
   故「装了之后怎么更新」不是它上不了商店的原因。
 - **一个仓库一个包，`install` 没有 `path` 字段。** 装子目录就无从就地拉取更新（`.git` 在仓库
   根）。要放多枚组件时让那个包导出多枚。
+- `homepage` 可省略；填写时必须是完整的 HTTP(S) 地址。
 - `widgets` / `server` / `deps` 三项是**预告**，仅供商店列表展示；装完一律以包的
   `package.json` 为准。故 `widgets` 填错数目不会让 CI 红，只查类型。
 

@@ -181,6 +181,12 @@ function checkEntry(raw, i, seen, spec, errors) {
     seen.add(name)
   }
 
+  if ("homepage" in raw) {
+    const homepage = text(raw, "homepage")
+    if (!homepage || !URL.canParse(homepage) || !["https:", "http:"].includes(new URL(homepage).protocol)) {
+      errors.push(`${at}：homepage 须为完整的 HTTP(S) 地址`)
+    }
+  }
   checkInstall(raw.install, `${at}（${name ?? "无名"}）`, errors)
   checkSetup(raw.setup, `${at}（${name ?? "无名"}）`, errors)
 
